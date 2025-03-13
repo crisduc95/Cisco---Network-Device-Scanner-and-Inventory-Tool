@@ -1,43 +1,71 @@
-# Cisco---Network-Device-Scanner-and-Inventory-Tool
-Este proyecto es una herramienta automatizada para escanear, conectar y recopilar información de dispositivos de red Cisco.
+# Network Device Scanner and Inventory Tool
 
-Network Device Scanner and Inventory Tool
-Este proyecto es una herramienta automatizada para escanear, conectar y recopilar información de dispositivos de red Cisco. Diseñada para simplificar la gestión de inventarios de red, esta aplicación permite:
+## Descripción
 
-Escanear rangos de IPs para encontrar dispositivos accesibles vía SSH o Telnet
-Conectarse automáticamente a los dispositivos usando credenciales proporcionadas
-Recopilar información crítica como números de serie, interfaces, VLANs y hostnames
-Generar un inventario completo en formato Excel para facilitar la gestión
+Esta herramienta automatizada permite escanear, conectar y recopilar información de dispositivos de red Cisco. Diseñada para simplificar la gestión de inventarios de red, la aplicación ofrece las siguientes funcionalidades:
 
-La herramienta utiliza multithreading para mejorar el rendimiento al escanear múltiples dispositivos simultáneamente y maneja automáticamente distintos métodos de conexión (SSH/Telnet) según la disponibilidad del dispositivo.
-Características principales:
+- Escaneo de rangos de IPs para identificar dispositivos accesibles vía SSH o Telnet.
+- Conexión automática a los dispositivos usando credenciales proporcionadas.
+- Recopilación de información crítica como números de serie, interfaces, VLANs y hostnames.
+- Generación de un inventario en formato Excel para facilitar la gestión.
 
-Conexión automática a dispositivos Cisco vía SSH (puerto 22) o Telnet (puerto 23)
-Ejecución de comandos predefinidos para recopilar información del inventario
-Registro detallado de accesos exitosos y fallidos
-Manejo de credenciales múltiples con soporte para variables de entorno
-Exportación de datos a Excel con timestamps para seguimiento del inventario
+## Características Principales
 
-Cómo usar
+- Conexión automática a dispositivos Cisco vía SSH (puerto 22) o Telnet (puerto 23).
+- Ejecución de comandos predefinidos para recopilar información del inventario.
+- Registro detallado de accesos exitosos y fallidos.
+- Manejo de credenciales múltiples con soporte para variables de entorno.
+- Exportación de datos a Excel con timestamps para el seguimiento del inventario.
+- Uso de **multithreading** para mejorar el rendimiento al escanear múltiples dispositivos simultáneamente.
 
-Asegúrate de tener Python 3.6+ instalado
-Instala las dependencias:
-pip install -r requirements.txt
+## Requisitos
 
-Crea un archivo lista_cisco.txt con las IPs de los dispositivos a escanear:
+- Python 3.6+
+- Dependencias del proyecto (instalables mediante `requirements.txt`).
 
-192.168.1.1
-192.168.1.2
-10.0.0.1
+## Instalación
 
-Opcionalmente, crea un archivo .env con credenciales alternativas:
+1. Clona el repositorio o descarga los archivos.
+2. Instala las dependencias necesarias:
 
-L=usuario_alternativo
-LPASS=contraseña_alternativa
-U=otro_usuario
-UPASS=otra_contraseña
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-python main.py
+## Uso
 
-Ingresa las credenciales principales cuando se soliciten
-Revisa el archivo network_inventory.xlsx para ver los resultados
+1. Crea un archivo `lista_cisco.txt` con las IPs de los dispositivos a escanear, por ejemplo:
+
+   ```txt
+   192.168.1.1
+   192.168.1.2
+   10.0.0.1
+   ```
+
+2. (Opcional) Crea un archivo `.env` con credenciales alternativas:
+
+   ```txt
+   L=usuario_alternativo
+   LPASS=contraseña_alternativa
+   U=otro_usuario
+   UPASS=otra_contraseña
+   ```
+
+3. Ejecuta el programa:
+
+   ```bash
+   python main.py
+   ```
+
+4. Ingresa las credenciales principales cuando se soliciten.
+5. Revisa el archivo `network_inventory.xlsx` para ver los resultados.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Para más información, revisa el archivo `LICENSE`.
+
+---
+
+> *Desarrollado para optimizar la gestión de inventarios de red de dispositivos Cisco.*
+
+
